@@ -88,6 +88,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Users\Hero\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Windows;C:\Users\Hero\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Thread;C:\Users\Hero\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Service;C:\Users\Hero\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Resource;C:\Users\Hero\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Model;C:\Users\Hero\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Interface;C:\Users\Hero\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Helper;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -146,13 +147,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RadarSimulation.h" />
-    <ClInclude Include="Resource.h" />
-    <ClInclude Include="stdafx.h" />
-    <ClInclude Include="targetver.h" />
+    <ClInclude Include="Windows\Resource.h" />
+    <ClInclude Include="Windows\stdafx.h" />
+    <ClInclude Include="Windows\targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="RadarSimulation.cpp" />
-    <ClCompile Include="stdafx.cpp">
+    <ClCompile Include="Windows\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -160,11 +161,11 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="RadarSimulation.rc" />
+    <ResourceCompile Include="Windows\RadarSimulation.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="RadarSimulation.ico" />
-    <Image Include="small.ico" />
+    <Image Include="Windows\RadarSimulation.ico" />
+    <Image Include="Windows\small.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
