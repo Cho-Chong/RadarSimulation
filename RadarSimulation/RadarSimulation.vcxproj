@@ -88,11 +88,12 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\Hero\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Windows;C:\Users\Hero\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Thread;C:\Users\Hero\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Service;C:\Users\Hero\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Resource;C:\Users\Hero\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Model;C:\Users\Hero\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Interface;C:\Users\Hero\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Helper;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Hero\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Grpahics;C:\Users\Hero\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Windows;C:\Users\Hero\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Thread;C:\Users\Hero\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Service;C:\Users\Hero\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Resource;C:\Users\Hero\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Model;C:\Users\Hero\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Interface;C:\Users\Hero\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Helper;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -146,12 +147,21 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Grpahics\GraphicsDriver.h" />
+    <ClInclude Include="Model\Pedestal.h" />
+    <ClInclude Include="Model\Receiver.h" />
+    <ClInclude Include="Model\Record.h" />
+    <ClInclude Include="Model\Reminder.h" />
+    <ClInclude Include="Model\Transmitter.h" />
+    <ClInclude Include="Model\Video.h" />
     <ClInclude Include="RadarSimulation.h" />
+    <ClInclude Include="Service\DataProcessing.h" />
     <ClInclude Include="Windows\Resource.h" />
     <ClInclude Include="Windows\stdafx.h" />
     <ClInclude Include="Windows\targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Grpahics\GraphicsDriver.cpp" />
     <ClCompile Include="RadarSimulation.cpp" />
     <ClCompile Include="Windows\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

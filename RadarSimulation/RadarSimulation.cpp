@@ -3,6 +3,9 @@
 
 #include "stdafx.h"
 #include "RadarSimulation.h"
+#include <Windows.h>
+#include <glew.h>
+#include "GraphicsDriver.h"
 
 #define MAX_LOADSTRING 100
 
@@ -10,12 +13,14 @@
 HINSTANCE hInst;                                // current instance
 WCHAR szTitle[MAX_LOADSTRING];                  // The title bar text
 WCHAR szWindowClass[MAX_LOADSTRING];            // the main window class name
+HDC globalDeviceHandle;
 
 // Forward declarations of functions included in this code module:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
 BOOL                InitInstance(HINSTANCE, int);
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
+void SetupPixelFormat(HDC hDC);
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                      _In_opt_ HINSTANCE hPrevInstance,
@@ -24,6 +29,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 {
     UNREFERENCED_PARAMETER(hPrevInstance);
     UNREFERENCED_PARAMETER(lpCmdLine);
+    Graphics::GraphicsDriver graphDriver;
 
     // TODO: Place code here.
 
@@ -47,6 +53,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     {
         if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
         {
+            graphDriver.Render(globalDeviceHandle);
             TranslateMessage(&msg);
             DispatchMessage(&msg);
         }
@@ -54,7 +61,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     return (int) msg.wParam;
 }
-
 
 
 //
@@ -123,8 +129,19 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 //
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
+    static HGLRC renderHandle;
+    static HDC deviceHandle;
+
     switch (message)
     {
+    case WM_CREATE:
+        {
+            deviceHandle = GetDC(hWnd);
+            globalDeviceHandle = deviceHandle;
+            SetupPixelFormat(deviceHandle);
+            renderHandle = wglCreateContext(deviceHandle);
+            wglMakeCurrent(deviceHandle, renderHandle);
+        }break;
     case WM_COMMAND:
         {
             int wmId = LOWORD(wParam);
@@ -151,6 +168,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         }
         break;
     case WM_DESTROY:
+        wglMakeCurrent(deviceHandle, NULL);
+        wglDeleteContext(renderHandle);
         PostQuitMessage(0);
         break;
     default:
@@ -177,4 +196,43 @@ INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
         break;
     }
     return (INT_PTR)FALSE;
+}
+
+//function to set the pixel format for the device context
+/*      Function:       SetupPixelFormat
+Purpose:        This function will be responsible
+for setting the pixel format for the
+device context.
+*/
+void SetupPixelFormat(HDC hDC)
+{
+    /*      Pixel format index
+    */
+    int nPixelFormat;
+
+    static PIXELFORMATDESCRIPTOR pfd = {
+        sizeof(PIXELFORMATDESCRIPTOR),          //size of structure
+        1,                                      //default version
+        PFD_DRAW_TO_WINDOW |                    //window drawing support
+        PFD_SUPPORT_OPENGL |                    //opengl support
+        PFD_DOUBLEBUFFER,                       //double buffering support
+        PFD_TYPE_RGBA,                          //RGBA color mode
+        32,                                     //32 bit color mode
+        0, 0, 0, 0, 0, 0,                       //ignore color bits
+        0,                                      //no alpha buffer
+        0,                                      //ignore shift bit
+        0,                                      //no accumulation buffer
+        0, 0, 0, 0,                             //ignore accumulation bits
+        16,                                     //16 bit z-buffer size
+        0,                                      //no stencil buffer
+        0,                                      //no aux buffer
+        PFD_MAIN_PLANE,                         //main drawing plane
+        0,                                      //reserved
+        0, 0, 0 };                              //layer masks ignored
+
+                                                /*      Choose best matching format*/
+    nPixelFormat = ChoosePixelFormat(hDC, &pfd);
+
+    /*      Set the pixel format to the device context*/
+    SetPixelFormat(hDC, nPixelFormat, &pfd);
 }
