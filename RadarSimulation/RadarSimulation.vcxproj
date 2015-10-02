@@ -88,12 +88,13 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\Hero\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Grpahics;C:\Users\Hero\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Windows;C:\Users\Hero\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Thread;C:\Users\Hero\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Service;C:\Users\Hero\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Resource;C:\Users\Hero\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Model;C:\Users\Hero\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Interface;C:\Users\Hero\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Helper;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Spam\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Grpahics;C:\Users\Spam\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Windows;C:\Users\Spam\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Service;C:\Users\Spam\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Model;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Glew32.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Program Files %28x86%29\Microsoft Visual Studio 14.0\VC\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -103,10 +104,13 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Users\Spam\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Windows;C:\Users\Spam\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Service;C:\Users\Spam\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Model;C:\Users\Spam\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Grpahics;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glew32.dll;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Program Files %28x86%29\Microsoft Visual Studio 14.0\VC\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
