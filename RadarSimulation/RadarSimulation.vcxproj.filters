@@ -51,7 +51,7 @@
     <ClInclude Include="Service\DataProcessing.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Grpahics\GraphicsDriver.h">
+    <ClInclude Include="Graphics\GraphicsDriver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -62,7 +62,7 @@
     <ClCompile Include="Windows\stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Grpahics\GraphicsDriver.cpp">
+    <ClCompile Include="Graphics\GraphicsDriver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -88,7 +88,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\Spam\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Grpahics;C:\Users\Spam\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Windows;C:\Users\Spam\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Service;C:\Users\Spam\Documents\Visual Studio 2015\Projects\RadarSimulation\RadarSimulation\Model;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\Graphics;$(ProjectDir)\Windows;$(ProjectDir)\Service;$(ProjectDir)\Model;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -151,7 +151,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Grpahics\GraphicsDriver.h" />
+    <ClInclude Include="Graphics\GraphicsDriver.h" />
     <ClInclude Include="Model\Pedestal.h" />
     <ClInclude Include="Model\Receiver.h" />
     <ClInclude Include="Model\Record.h" />
@@ -165,7 +165,7 @@
     <ClInclude Include="Windows\targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Grpahics\GraphicsDriver.cpp" />
+    <ClCompile Include="Graphics\GraphicsDriver.cpp" />
     <ClCompile Include="RadarSimulation.cpp" />
     <ClCompile Include="Windows\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
