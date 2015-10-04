@@ -16,10 +16,9 @@ namespace Graphics
         GraphicsDriver() {}
         ~GraphicsDriver() {}
 
-        void Render(HDC deviceHandle);
+        static void Render();
     private:
-        void DrawCube(float x, float y, float z);
-        void DrawHead(float x, float y, float z);
+        static void DrawCube();
     };
 }
 

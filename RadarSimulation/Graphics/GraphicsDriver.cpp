@@ -1,16 +1,17 @@
 #include "stdafx.h"
 #include "GraphicsDriver.h"
-#include <Windows.h>
+#include <windows.h>
 #include <glew.h>
+#include <freeglut.h>
 
 using namespace Graphics;
 
-void GraphicsDriver::Render(HDC deviceHandle)
+void GraphicsDriver::Render()
 {
-    /*      Enable depth testing
-    */
-    glEnable(GL_DEPTH_TEST);
-
+    static float rotate_x = 0.0f;
+    static float rotate_y = 0.0f;
+    rotate_x += 0.5f;
+    rotate_y += 0.5f;
     /*      Heres our rendering. Clears the screen
     to black, clear the color and depth
     buffers, and reset our modelview matrix.
@@ -19,81 +20,77 @@ void GraphicsDriver::Render(HDC deviceHandle)
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glLoadIdentity();
 
-    glPushMatrix();
-    glLoadIdentity();
-
     /*      Move to 0,0,-30 , rotate the robot on
     its y axis, draw the robot, and dispose
     of the current matrix.
     */
-    glTranslatef(0.0f, 0.0f, -30.0f);
-    glRotatef(1.0f, 0.0f, 1.0f, 0.0f);
-    DrawHead(1.0f, 2.0f, 3.0f);
-    glPopMatrix();
+    //glTranslatef(0.0f, 0.0f, -30.0f);
+    glRotatef(rotate_x, 1.0f, 0.0f, 0.0f);
+    glRotatef(rotate_y, 0.0f, 1.0f, 0.0f);
+    DrawCube();
 
     glFlush();
 
     /*      Bring back buffer to foreground
     */
-    SwapBuffers(deviceHandle);
+    glutSwapBuffers();
 }
 
-void GraphicsDriver::DrawHead(float xPos, float yPos, float zPos)
-{
-    glPushMatrix();
-
-    /*      Sets color to white*/
-    glColor3f(1.0f, 1.0f, 1.0f);
-    glTranslatef(xPos, yPos, zPos);
-
-    /*      Creates 2 x 2 x 2 cube*/
-    glScalef(2.0f, 2.0f, 2.0f);
-    DrawCube(0.0f, 0.0f, 0.0f);
-
-    glPopMatrix();
-}
-
-void GraphicsDriver::DrawCube(float xPos, float yPos, float zPos)
+void GraphicsDriver::DrawCube()
 {
     glPushMatrix();
     glBegin(GL_POLYGON);
 
-    /*      This is the top face*/
-    glVertex3f(0.0f, 0.0f, 0.0f);
-    glVertex3f(0.0f, 0.0f, -1.0f);
-    glVertex3f(-1.0f, 0.0f, -1.0f);
-    glVertex3f(-1.0f, 0.0f, 0.0f);
+    glColor3f(1.0, 0.0, 0.0);     glVertex3f(0.5, -0.5, -0.5);      // P1 is red
+    glColor3f(0.0, 1.0, 0.0);     glVertex3f(0.5, 0.5, -0.5);      // P2 is green
+    glColor3f(0.0, 0.0, 1.0);     glVertex3f(-0.5, 0.5, -0.5);      // P3 is blue
+    glColor3f(1.0, 0.0, 1.0);     glVertex3f(-0.5, -0.5, -0.5);      // P4 is purple
 
-    /*      This is the front face*/
-    glVertex3f(0.0f, 0.0f, 0.0f);
-    glVertex3f(-1.0f, 0.0f, 0.0f);
-    glVertex3f(-1.0f, -1.0f, 0.0f);
-    glVertex3f(0.0f, -1.0f, 0.0f);
+    glEnd();
 
-    /*      This is the right face*/
-    glVertex3f(0.0f, 0.0f, 0.0f);
-    glVertex3f(0.0f, -1.0f, 0.0f);
-    glVertex3f(0.0f, -1.0f, -1.0f);
-    glVertex3f(0.0f, 0.0f, -1.0f);
+    // White side - BACK
+    glBegin(GL_POLYGON);
+    glColor3f(1.0, 1.0, 1.0);
+    glVertex3f(0.5, -0.5, 0.5);
+    glVertex3f(0.5, 0.5, 0.5);
+    glVertex3f(-0.5, 0.5, 0.5);
+    glVertex3f(-0.5, -0.5, 0.5);
+    glEnd();
 
-    /*      This is the left face*/
-    glVertex3f(-1.0f, 0.0f, 0.0f);
-    glVertex3f(-1.0f, 0.0f, -1.0f);
-    glVertex3f(-1.0f, -1.0f, -1.0f);
-    glVertex3f(-1.0f, -1.0f, 0.0f);
+    // Purple side - RIGHT
+    glBegin(GL_POLYGON);
+    glColor3f(1.0, 0.0, 1.0);
+    glVertex3f(0.5, -0.5, -0.5);
+    glVertex3f(0.5, 0.5, -0.5);
+    glVertex3f(0.5, 0.5, 0.5);
+    glVertex3f(0.5, -0.5, 0.5);
+    glEnd();
 
-    /*      This is the bottom face*/
-    glVertex3f(0.0f, 0.0f, 0.0f);
-    glVertex3f(0.0f, -1.0f, -1.0f);
-    glVertex3f(-1.0f, -1.0f, -1.0f);
-    glVertex3f(-1.0f, -1.0f, 0.0f);
+    // Green side - LEFT
+    glBegin(GL_POLYGON);
+    glColor3f(0.0, 1.0, 0.0);
+    glVertex3f(-0.5, -0.5, 0.5);
+    glVertex3f(-0.5, 0.5, 0.5);
+    glVertex3f(-0.5, 0.5, -0.5);
+    glVertex3f(-0.5, -0.5, -0.5);
+    glEnd();
 
-    /*      This is the back face*/
-    glVertex3f(0.0f, 0.0f, 0.0f);
-    glVertex3f(-1.0f, 0.0f, -1.0f);
-    glVertex3f(-1.0f, -1.0f, -1.0f);
-    glVertex3f(0.0f, -1.0f, -1.0f);
+    // Blue side - TOP
+    glBegin(GL_POLYGON);
+    glColor3f(0.0, 0.0, 1.0);
+    glVertex3f(0.5, 0.5, 0.5);
+    glVertex3f(0.5, 0.5, -0.5);
+    glVertex3f(-0.5, 0.5, -0.5);
+    glVertex3f(-0.5, 0.5, 0.5);
+    glEnd();
 
+    // Red side - BOTTOM
+    glBegin(GL_POLYGON);
+    glColor3f(1.0, 0.0, 0.0);
+    glVertex3f(0.5, -0.5, -0.5);
+    glVertex3f(0.5, -0.5, 0.5);
+    glVertex3f(-0.5, -0.5, 0.5);
+    glVertex3f(-0.5, -0.5, -0.5);
     glEnd();
     glPopMatrix();
 }
