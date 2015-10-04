@@ -160,7 +160,6 @@
     <ClInclude Include="Model\Video.h" />
     <ClInclude Include="RadarSimulation.h" />
     <ClInclude Include="Service\DataProcessing.h" />
-    <ClInclude Include="Windows\Resource.h" />
     <ClInclude Include="Windows\stdafx.h" />
     <ClInclude Include="Windows\targetver.h" />
   </ItemGroup>
@@ -173,13 +172,6 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="Windows\RadarSimulation.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="Windows\RadarSimulation.ico" />
-    <Image Include="Windows\small.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

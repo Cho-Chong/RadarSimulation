@@ -21,9 +21,6 @@
     <ClInclude Include="RadarSimulation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Windows\Resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Windows\stdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -65,18 +62,5 @@
     <ClCompile Include="Graphics\GraphicsDriver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="Windows\small.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Windows\RadarSimulation.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="Windows\RadarSimulation.rc">
-      <Filter>Resource Files</Filter>
-    </ResourceCompile>
   </ItemGroup>
 </Project>
