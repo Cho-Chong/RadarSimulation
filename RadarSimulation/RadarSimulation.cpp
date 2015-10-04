@@ -1,7 +1,6 @@
 // RadarSimulation.cpp : Defines the entry point for the application.
 //
 
-#include "stdafx.h"
 #include <stdarg.h>
 #include <windows.h>
 #include "glew.h"
@@ -9,7 +8,6 @@
 #include "freeglut.h"
 
 #include <functional>
-#include "RadarSimulation.h"
 #include "GraphicsDriver.h"
 
 const char* APP_TITLE = "Radar Simulation";

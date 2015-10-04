@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "GraphicsDriver.h"
 #include <windows.h>
 #include <glew.h>
