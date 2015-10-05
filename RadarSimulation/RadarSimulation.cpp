@@ -33,5 +33,6 @@ void StartGlut(int argc, char* argv[])
 
     glutDisplayFunc(&graphDriver.Render);
     glutIdleFunc(&graphDriver.Render);
+    glutCloseFunc(&graphDriver.Cleanup);
     glutMainLoop();
 }

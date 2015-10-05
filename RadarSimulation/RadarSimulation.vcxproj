@@ -155,10 +155,11 @@
     <ClInclude Include="Model\Pedestal.h" />
     <ClInclude Include="Model\Receiver.h" />
     <ClInclude Include="Model\Record.h" />
-    <ClInclude Include="Model\Reminder.h" />
+    <ClInclude Include="Reminder.h" />
     <ClInclude Include="Model\Transmitter.h" />
     <ClInclude Include="Model\Video.h" />
     <ClInclude Include="Service\DataProcessing.h" />
+    <ClInclude Include="Service\TransmitService.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Graphics\GraphicsDriver.cpp" />

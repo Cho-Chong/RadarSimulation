@@ -93,3 +93,9 @@ void GraphicsDriver::DrawCube()
     glEnd();
     glPopMatrix();
 }
+
+//TODO: What needs to be done with opengl?
+void GraphicsDriver::Cleanup()
+{
+
+}

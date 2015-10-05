@@ -16,7 +16,7 @@ namespace Model
     class Transmitter : public Record
     {
     public:
-        Transmitter();
+        Transmitter(double power, double freq, double pulse_width, double prf);
         virtual ~Transmitter();
 
     private:
@@ -25,6 +25,22 @@ namespace Model
         double PulseWidth;
         double PRF;
     };
+
+    //TODO: move to cpp
+
+    Transmitter::Transmitter(double power, double freq, double pulse_width, double prf) :
+        PowerWatts(power),
+        FrequencyHz(freq),
+        PulseWidth(pulse_width),
+        PRF(prf)
+    {
+
+    }
+
+    Transmitter::~Transmitter()
+    {
+
+    }
 }
 
 #endif /*_TRANSMITTER_H_*/

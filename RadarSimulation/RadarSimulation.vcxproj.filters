@@ -27,12 +27,6 @@
     <ClInclude Include="Model\Record.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Model\Reminder.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Model\Transmitter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Model\Video.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -40,6 +34,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Graphics\GraphicsDriver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\Transmitter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Reminder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Service\TransmitService.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -16,6 +16,7 @@ namespace Graphics
         GraphicsDriver() {}
         ~GraphicsDriver() {}
 
+        static void Cleanup();
         static void Render();
     private:
         static void DrawCube();
