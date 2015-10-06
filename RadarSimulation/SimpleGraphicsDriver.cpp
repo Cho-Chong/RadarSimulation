@@ -1,11 +1,11 @@
-#include "GraphicsDriver.h"
+#include "SimpleGraphicsDriver.h"
 #include <windows.h>
 #include <glew.h>
 #include <freeglut.h>
 
 using namespace Graphics;
 
-void GraphicsDriver::Render()
+void SimpleGraphicsDriver::Display()
 {
     static float rotate_x = 0.0f;
     static float rotate_y = 0.0f;
@@ -35,7 +35,7 @@ void GraphicsDriver::Render()
     glutSwapBuffers();
 }
 
-void GraphicsDriver::DrawCube()
+void SimpleGraphicsDriver::DrawCube()
 {
     glPushMatrix();
     glBegin(GL_POLYGON);
@@ -95,7 +95,7 @@ void GraphicsDriver::DrawCube()
 }
 
 //TODO: What needs to be done with opengl?
-void GraphicsDriver::Cleanup()
+void SimpleGraphicsDriver::Cleanup()
 {
 
 }

@@ -45,6 +45,15 @@
     <ClInclude Include="Service\TransmitService.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Interface\ISimService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Service\SpaceSimService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\IGraphicsDriver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="RadarSimulation.cpp">

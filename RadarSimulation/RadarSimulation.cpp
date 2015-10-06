@@ -12,12 +12,11 @@
 
 const char* APP_TITLE = "Radar Simulation";
 
-static Graphics::GraphicsDriver graphDriver;
-
 void StartGlut(int argc, char* argv[]);
 
 int main(int argc, char* argv[])
 {
+    Graphics::GraphicsDriver graphDriver;
     StartGlut(argc, argv);
 
     return 0;
@@ -27,7 +26,7 @@ void StartGlut(int argc, char* argv[])
 {
     glutInit(&argc, argv);
 
-    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
+        (GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
     glutCreateWindow(APP_TITLE);
     glEnable(GL_DEPTH_TEST);
 
