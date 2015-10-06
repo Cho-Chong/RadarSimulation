@@ -12,15 +12,17 @@
 
 namespace Graphics
 {
-    class SimpleGraphicsDriver : Interface::IGraphicsDriver
+    class SimpleGraphicsDriver : public Interface::IGraphicsDriver
     {
     public:
         SimpleGraphicsDriver() {}
         ~SimpleGraphicsDriver() {}
 
-        static void Display();
-        static void Idle();
-        static void Cleanup();
+        void Display();
+
+        void Idle();
+
+        void Cleanup();
     private:
         static void DrawCube();
     };

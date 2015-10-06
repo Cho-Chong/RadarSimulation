@@ -88,7 +88,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir)\Interface;$(ProjectDir)\Graphics;$(ProjectDir)\Windows;$(ProjectDir)\Service;$(ProjectDir)\Model;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\Helper;$(ProjectDir)\Interface;$(ProjectDir)\Graphics;$(ProjectDir)\Windows;$(ProjectDir)\Service;$(ProjectDir)\Model;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -151,7 +151,8 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Graphics\GraphicsDriver.h" />
+    <ClInclude Include="Graphics\SimpleGraphicsDriver.h" />
+    <ClInclude Include="Helper\GraphicsWrapper.h" />
     <ClInclude Include="Interface\IGraphicsDriver.h" />
     <ClInclude Include="Model\Pedestal.h" />
     <ClInclude Include="Model\Receiver.h" />
@@ -165,7 +166,8 @@
     <ClInclude Include="Service\TransmitService.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Graphics\GraphicsDriver.cpp" />
+    <ClCompile Include="Graphics\SimpleGraphicsDriver.cpp" />
+    <ClCompile Include="Helper\GraphicsWrapper.cpp" />
     <ClCompile Include="RadarSimulation.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>

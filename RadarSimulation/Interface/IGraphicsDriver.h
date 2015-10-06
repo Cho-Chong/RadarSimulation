@@ -12,14 +12,14 @@ namespace Interface
 {
     class IGraphicsDriver
     {
-        IGraphicsDriver();
-        virtual ~IGraphicsDriver();
+    public:
+        virtual ~IGraphicsDriver() {};
 
-        virtual void Display();
+        virtual void Display() = 0;
 
-        virtual void Idle();
+        virtual void Idle() = 0;
 
-        virtual void Cleanup();
+        virtual void Cleanup() = 0;
     };
 }
 

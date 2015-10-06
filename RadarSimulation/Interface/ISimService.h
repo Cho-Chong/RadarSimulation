@@ -13,10 +13,11 @@ namespace Interface
     class ISimService
     {
     public:
-        ISimService();
-        virtual ~ISimService();
-        virtual void Initialize();
-        virtual void Execute();
+        virtual ~ISimService() {}
+
+        virtual void Initialize() = 0;
+
+        virtual void Execute() = 0;
     private:
     };
 }
