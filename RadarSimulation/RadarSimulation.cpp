@@ -29,12 +29,12 @@ void StartGlut(int argc, char* argv[])
         (GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
     glutCreateWindow(APP_TITLE);
     glEnable(GL_DEPTH_TEST);
+
+    //TODO: could I use the fancy lambdas here?
     GraphicsHelper::SetGraphicsDriver(new Graphics::SimpleGraphicsDriver());
     glutDisplayFunc(GraphicsHelper::Display);
     glutIdleFunc(GraphicsHelper::Idle);
     glutCloseFunc(GraphicsHelper::Cleanup);
-
-    //TODO: use boost::bind to map 
 
     glutMainLoop();
 }
