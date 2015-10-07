@@ -5,7 +5,7 @@
 #include <windows.h>
 #include "glew.h"
 #include <gl/GL.h>
-#include "freeglut.h"
+#include <freeglut.h>
 
 #include <functional>
 #include "SimpleGraphicsDriver.h"
@@ -19,6 +19,7 @@ int main(int argc, char* argv[])
 {
     StartGlut(argc, argv);
 
+    system("PAUSE");
     return 0;
 }
 
@@ -26,7 +27,7 @@ void StartGlut(int argc, char* argv[])
 {
     glutInit(&argc, argv);
 
-        (GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
     glutCreateWindow(APP_TITLE);
     glEnable(GL_DEPTH_TEST);
 

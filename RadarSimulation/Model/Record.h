@@ -12,8 +12,20 @@ namespace Model
     class Record
     {
     public:
-        Record() {}
-        virtual ~Record() = 0;
+        typedef unsigned long long LUID; // fake ass guid
+
+        Record() 
+        {
+            // Make unique Id...
+        }
+
+        virtual ~Record() {};
+
+        LUID GetId() const { return Id; }
+        void SetId(const LUID &id) { Id = id; }
+
+    private:
+        LUID Id;
     };
 }
 

@@ -15,8 +15,8 @@ namespace Model
     class Video : public Record
     {
     public:
-        Video();
-        virtual ~Video();
+        Video() {}
+        virtual ~Video() {};
 
     private:
         static const int MAX_VIDEO_LENGTH = 128;

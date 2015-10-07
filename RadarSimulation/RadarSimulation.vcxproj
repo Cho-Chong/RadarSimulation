@@ -154,9 +154,12 @@
     <ClInclude Include="Graphics\SimpleGraphicsDriver.h" />
     <ClInclude Include="Helper\GraphicsWrapper.h" />
     <ClInclude Include="Interface\IGraphicsDriver.h" />
+    <ClInclude Include="Interface\IStore.h" />
+    <ClInclude Include="Model\Cable.h" />
     <ClInclude Include="Model\Pedestal.h" />
     <ClInclude Include="Model\Receiver.h" />
     <ClInclude Include="Model\Record.h" />
+    <ClInclude Include="Model\Space.h" />
     <ClInclude Include="Reminder.h" />
     <ClInclude Include="Model\Transmitter.h" />
     <ClInclude Include="Model\Video.h" />
@@ -164,6 +167,7 @@
     <ClInclude Include="Interface\ISimService.h" />
     <ClInclude Include="Service\SpaceSimService.h" />
     <ClInclude Include="Service\TransmitService.h" />
+    <ClInclude Include="Store\Store.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Graphics\SimpleGraphicsDriver.cpp" />
@@ -171,6 +175,9 @@
     <ClCompile Include="RadarSimulation.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Service\SpaceSimService.cpp" />
+    <ClCompile Include="Service\TransmitService.cpp" />
+    <ClCompile Include="Store\Store.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

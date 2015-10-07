@@ -9,7 +9,7 @@
 #define _SPACESIMSERVICE_H_
 
 #include "ISimService.h"
-#include "Transmitter.h"
+#include "TransmitService.h"
 
 namespace Service
 {
@@ -23,22 +23,10 @@ namespace Service
 
         virtual void Execute();
     private:
+        //TODO: needs to know target and enviornment shape
+        //Each point in space maps to a value of Radar Cross Section
     };
 
-    //TODO: move to cpp
-
-    void SpaceSimService::Initialize()
-    {
-
-    }
-
-    void SpaceSimService::Execute()
-    {
-        // Get signal strength at range 0
-        // simulate targets, clutters
-        // calcualte radar power return- simulate multipath
-        // output radar power at various ranges
-    }
 }
 
 #endif /*_SPACESIMSERVICE_H_*/

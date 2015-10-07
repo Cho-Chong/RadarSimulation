@@ -28,19 +28,19 @@ namespace Model
 
     //TODO: move to cpp
 
-    Transmitter::Transmitter(double power, double freq, double pulse_width, double prf) :
-        PowerWatts(power),
-        FrequencyHz(freq),
-        PulseWidth(pulse_width),
-        PRF(prf)
-    {
+    //Transmitter::Transmitter(double power, double freq, double pulse_width, double prf) :
+    //    PowerWatts(power),
+    //    FrequencyHz(freq),
+    //    PulseWidth(pulse_width),
+    //    PRF(prf)
+    //{
 
-    }
+    //}
 
-    Transmitter::~Transmitter()
-    {
+    //Transmitter::~Transmitter()
+    //{
 
-    }
+    //}
 }
 
 #endif /*_TRANSMITTER_H_*/

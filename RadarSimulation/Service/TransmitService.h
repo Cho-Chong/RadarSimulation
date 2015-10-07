@@ -25,19 +25,6 @@ namespace Service
     private:
     };
 
-    //TODO: move to cpp
-
-    void TransmitService::Initialize()
-    {
-
-    }
-
-    void TransmitService::Execute()
-    {
-        // Get Transmitter from db
-        // Simulate fluctuations
-        // Output Transmit Signal
-    }
 }
 
 #endif /*_TRANSMITSERVICE_H_*/
