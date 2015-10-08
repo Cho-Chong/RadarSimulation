@@ -1,5 +1,4 @@
 #include "Store.h"
-#include <functional>
 
 namespace Store
 {
@@ -23,48 +22,52 @@ namespace Store
         Cache.clear();
     }
 
-    void Store::TestLambda(const Model::Record &record, std::function<void(const Model::Record)> test)
-    {
-        RecordMap::const_iterator it = Cache.find(record.GetId());
-
-        if (it != Cache.end())
-        {
-            test(record);
-        }
-    }
-
     void Store::Add(const Model::Record &record)
     {
-        auto add_func = [](auto x)
+        if (Cache.find(record.GetId()) != Cache.end())
         {
             Cache[record.GetId()] = record;
-        };
-
-        TestLambda(record, add_func);
+        }
     }
 
     void Store::Delete(const Model::Record &record)
     {
-        
+        if (Cache.find(record.GetId()) != Cache.end())
+        {
+            Cache.erase(record.GetId());
+        }
     }
 
-    void Store::Update(Model::Record record)
+    void Store::Update(const Model::Record& record)
     {
-
+        if (Cache.find(record.GetId()) != Cache.end())
+        {
+            Cache[record.GetId()] = record;
+        }
     }
 
-    void Store::AddMany(RecordList record)
+    void Store::AddMany(const Model::RecordList& records)
     {
+        for (auto record : records)
+        {
+            Add(record);
+        }
     }
 
-    void Store::DeleteMany(RecordList record)
+    void Store::DeleteMany(const Model::RecordList& records)
     {
-
+        for (auto record : records)
+        {
+            Delete(record);
+        }
     }
 
-    void Store::UpdateMany(RecordList record)
+    void Store::UpdateMany(const Model::RecordList& records)
     {
-
+        for (auto record : records)
+        {
+            Update(record);
+        }
     }
 
 }

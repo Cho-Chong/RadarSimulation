@@ -7,16 +7,19 @@
 #ifndef _RECORD_H_
 #define _RECORD_H_
 
+#include <vector>
+
 namespace Model
 {
+    typedef unsigned long long LUID; // fake ass guid
+
     class Record
     {
     public:
-        typedef unsigned long long LUID; // fake ass guid
 
         Record() 
         {
-            // Make unique Id...
+            
         }
 
         virtual ~Record() {};
@@ -27,6 +30,8 @@ namespace Model
     private:
         LUID Id;
     };
+
+    typedef std::vector<Model::Record> RecordList;
 }
 
 #endif /*_RECORD_H_*/

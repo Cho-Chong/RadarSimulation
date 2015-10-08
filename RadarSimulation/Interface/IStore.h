@@ -9,15 +9,12 @@
 #define _ISTORE_H_
 
 #include "Record.h"
-#include <vector>
 
 namespace Interface
 {
-
     class IStore
     {
     public:
-        typedef std::vector<Model::Record> RecordList;
 
         virtual ~IStore() {};
 
@@ -33,11 +30,11 @@ namespace Interface
 
         virtual void Update(Model::Record record) = 0;
 
-        virtual void AddMany(RecordList record) = 0;
+        virtual void AddMany(const Model::RecordList& records) = 0;
 
-        virtual void DeleteMany(RecordList record) = 0;
+        virtual void DeleteMany(const Model::RecordList& records) = 0;
 
-        virtual void UpdateMany(RecordList record) = 0;
+        virtual void UpdateMany(const Model::RecordList& records) = 0;
         
         //TODO: add eventhandlers
 

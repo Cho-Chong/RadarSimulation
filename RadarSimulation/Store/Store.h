@@ -9,7 +9,6 @@
 #define _STORE_H_
 
 #include "IStore.h"
-#include <functional>
 #include <map>
 
 //TODO: local file based store or in-memory?
@@ -18,7 +17,7 @@ namespace Store
     class Store : public Interface::IStore
     {
     public:
-        typedef std::map<uint64_t, Model::Record> RecordMap;
+        typedef std::map<Model::LUID, Model::Record> RecordMap;
 
         Store();
         virtual ~Store();
@@ -31,15 +30,13 @@ namespace Store
 
         virtual void Delete(const Model::Record& record);
 
-        virtual void Update(Model::Record record);
+        virtual void Update(const Model::Record& record);
 
-        virtual void AddMany(RecordList record);
+        virtual void AddMany(const Model::RecordList& records);
 
-        virtual void DeleteMany(RecordList record);
+        virtual void DeleteMany(const Model::RecordList& records);
 
-        virtual void UpdateMany(RecordList record);
-
-        void TestLambda(const Model::Record &record, std::function<void(const Model::Record)> test);
+        virtual void UpdateMany(const Model::RecordList& records);
 
     private:
         // TODO: need to make an actual cache...
