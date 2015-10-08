@@ -26,7 +26,7 @@ namespace Store
 
         virtual void Close();
 
-        virtual void Add(const Model::Record& record);
+        virtual void Add(Model::Record& record);
 
         virtual void Delete(const Model::Record& record);
 

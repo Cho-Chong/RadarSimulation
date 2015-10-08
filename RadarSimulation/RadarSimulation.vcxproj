@@ -160,6 +160,7 @@
     <ClInclude Include="Model\Receiver.h" />
     <ClInclude Include="Model\Record.h" />
     <ClInclude Include="Model\Space.h" />
+    <ClInclude Include="Model\System.h" />
     <ClInclude Include="Reminder.h" />
     <ClInclude Include="Model\Transmitter.h" />
     <ClInclude Include="Model\Video.h" />

@@ -24,11 +24,11 @@ namespace Interface
 
         virtual void Close() = 0;
 
-        virtual void Add(Model::Record record) = 0;
+        virtual void Add(Model::Record &record) = 0;
 
-        virtual void Delete(Model::Record record) = 0;
+        virtual void Delete(const Model::Record &record) = 0;
 
-        virtual void Update(Model::Record record) = 0;
+        virtual void Update(const Model::Record &record) = 0;
 
         virtual void AddMany(const Model::RecordList& records) = 0;
 
