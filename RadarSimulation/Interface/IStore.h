@@ -5,8 +5,8 @@
 *
 */
 
-#ifndef _ISTORE_H_
-#define _ISTORE_H_
+#ifndef ISTORE_H
+#define ISTORE_H
 
 #include "Record.h"
 
@@ -42,4 +42,4 @@ namespace Interface
     };
 }
 
-#endif /*_ISTORE_H_*/
+#endif /*ISTORE_H*/

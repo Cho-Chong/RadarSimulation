@@ -5,8 +5,8 @@
 *
 */
 
-#ifndef _SPACESIMSERVICE_H_
-#define _SPACESIMSERVICE_H_
+#ifndef SPACESIMSERVICE_H
+#define SPACESIMSERVICE_H
 
 #include "ISimService.h"
 #include "TransmitService.h"
@@ -29,4 +29,4 @@ namespace Service
 
 }
 
-#endif /*_SPACESIMSERVICE_H_*/
+#endif /*SPACESIMSERVICE_H*/

@@ -5,8 +5,8 @@
 *
 */
 
-#ifndef _SIMPLEGRAPHICSDRIVER_H_
-#define _SIMPLEGRAPHICSDRIVER_H_
+#ifndef SIMPLEGRAPHICSDRIVER_H
+#define SIMPLEGRAPHICSDRIVER_H
 
 #include "IGraphicsDriver.h"
 
@@ -28,4 +28,4 @@ namespace Graphics
     };
 }
 
-#endif /*_SIMPLEGRAPHICSDRIVER_H_*/
+#endif /*SIMPLEGRAPHICSDRIVER_H*/

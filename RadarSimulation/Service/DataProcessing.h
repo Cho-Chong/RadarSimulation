@@ -5,8 +5,8 @@
 *
 */
 
-#ifndef _DATAPROCESSING_H_
-#define _DATAPROCESSING_H_
+#ifndef DATAPROCESSING_H
+#define DATAPROCESSING_H
 
 #include "Video.h"
 
@@ -24,4 +24,4 @@ namespace Service
     };
 }
 
-#endif /*_DATAPROCESSING_H_*/
+#endif /*DATAPROCESSING_H*/

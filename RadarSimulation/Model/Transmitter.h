@@ -6,8 +6,8 @@
 *
 */
 
-#ifndef _TRANSMITTER_H_
-#define _TRANSMITTER_H_
+#ifndef TRANSMITTER_H
+#define TRANSMITTER_H
 
 #include "Record.h"
 
@@ -43,4 +43,4 @@ namespace Model
     //}
 }
 
-#endif /*_TRANSMITTER_H_*/
+#endif /*TRANSMITTER_H*/

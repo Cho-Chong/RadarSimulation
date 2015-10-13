@@ -5,8 +5,8 @@
 *
 */
 
-#ifndef _TRANSMITSERVICE_H_
-#define _TRANSMITSERVICE_H_
+#ifndef TRANSMITSERVICE_H
+#define TRANSMITSERVICE_H
 
 #include "ISimService.h"
 #include "Transmitter.h"
@@ -27,4 +27,4 @@ namespace Service
 
 }
 
-#endif /*_TRANSMITSERVICE_H_*/
+#endif /*TRANSMITSERVICE_H*/

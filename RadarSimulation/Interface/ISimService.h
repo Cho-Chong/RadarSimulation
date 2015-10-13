@@ -5,8 +5,8 @@
 *
 */
 
-#ifndef _ISIMSERVICE_H_
-#define _ISIMSERVICE_H_
+#ifndef ISIMSERVICE_H
+#define ISIMSERVICE_H
 
 namespace Interface
 {
@@ -22,5 +22,5 @@ namespace Interface
     };
 }
 
-#endif /*_ISIMSERVICE_H_*/
+#endif /*ISIMSERVICE_H*/
 

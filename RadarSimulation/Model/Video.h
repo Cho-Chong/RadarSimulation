@@ -5,8 +5,8 @@
 *
 */
 
-#ifndef _VIDEO_H_
-#define _VIDEO_H_
+#ifndef VIDEO_H
+#define VIDEO_H
 
 #include "Record.h"
 
@@ -24,4 +24,4 @@ namespace Model
     };
 }
 
-#endif /*_VIDEO_H_*/
+#endif /*VIDEO_H*/

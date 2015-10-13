@@ -6,8 +6,8 @@
 *
 */
 
-#ifndef _PEDESTAL_H_
-#define _PEDESTAL_H_
+#ifndef PEDESTAL_H
+#define PEDESTAL_H
 
 #include "Record.h"
 
@@ -28,4 +28,4 @@ namespace Model
     };
 }
 
-#endif /*_PEDESTAL_H_*/
+#endif /*PEDESTAL_H*/

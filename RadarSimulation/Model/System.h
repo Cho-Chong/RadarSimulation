@@ -4,8 +4,8 @@
 * Description: Record is an abstract type for model classes to inherit for database handling
 */
 
-#ifndef _SYSTEM_H_
-#define _SYSTEM_H_
+#ifndef SYSTEM_H
+#define SYSTEM_H
 
 #include "Record.h"
 
@@ -33,4 +33,4 @@ namespace Model
 
 }
 
-#endif /*_SYSTEM_H_*/
+#endif /*SYSTEM_H*/

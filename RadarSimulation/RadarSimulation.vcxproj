@@ -88,7 +88,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir)\Helper;$(ProjectDir)\Interface;$(ProjectDir)\Graphics;$(ProjectDir)\Windows;$(ProjectDir)\Service;$(ProjectDir)\Model;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(BOOST_ROOT);$(ProjectDir)\Helper;$(ProjectDir)\Interface;$(ProjectDir)\Graphics;$(ProjectDir)\Windows;$(ProjectDir)\Service;$(ProjectDir)\Model;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -160,6 +160,7 @@
     <ClInclude Include="Model\Receiver.h" />
     <ClInclude Include="Model\Record.h" />
     <ClInclude Include="Model\Space.h" />
+    <ClInclude Include="Model\System.h" />
     <ClInclude Include="Reminder.h" />
     <ClInclude Include="Model\Transmitter.h" />
     <ClInclude Include="Model\Video.h" />

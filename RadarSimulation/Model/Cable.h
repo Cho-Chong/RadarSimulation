@@ -5,8 +5,8 @@
 *
 */
 
-#ifndef _CABLE_H_
-#define _CABLE_H_
+#ifndef CABLE_H
+#define CABLE_H
 
 #include "Record.h"
 
@@ -25,4 +25,4 @@ namespace Model
     };
 }
 
-#endif /*_CABLE_H_*/
+#endif /*CABLE_H*/

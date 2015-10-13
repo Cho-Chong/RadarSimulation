@@ -4,8 +4,8 @@
 * Description: Record is an abstract type for model classes to inherit for database handling
 */
 
-#ifndef _RECORD_H_
-#define _RECORD_H_
+#ifndef RECORD_H
+#define RECORD_H
 
 #include <vector>
 
@@ -34,4 +34,4 @@ namespace Model
     typedef std::vector<Model::Record> RecordList;
 }
 
-#endif /*_RECORD_H_*/
+#endif /*RECORD_H*/

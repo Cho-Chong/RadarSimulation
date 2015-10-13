@@ -5,8 +5,8 @@
 *
 */
 
-#ifndef _IGRAPHICSDRIVER_H_
-#define _IGRAPHICSDRIVER_H_
+#ifndef IGRAPHICSDRIVER_H
+#define IGRAPHICSDRIVER_H
 
 namespace Interface
 {
@@ -23,4 +23,4 @@ namespace Interface
     };
 }
 
-#endif /*_IGRAPHICSDRIVER_H_*/
+#endif /*IGRAPHICSDRIVER_H*/

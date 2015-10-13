@@ -5,8 +5,8 @@
 *
 */
 
-#ifndef _GRAPHICSWRAPPER_H_
-#define _GRAPHICSWRAPPER_H_
+#ifndef GRAPHICSWRAPPER_H
+#define GRAPHICSWRAPPER_H
 
 #include "IGraphicsDriver.h"
 
@@ -24,4 +24,4 @@ namespace GraphicsHelper
     void Cleanup();
 }
 
-#endif /*_GRAPHICSWRAPPER_H_*/
+#endif /*GRAPHICSWRAPPER_H*/

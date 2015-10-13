@@ -6,8 +6,8 @@
 *
 */
 
-#ifndef _RECEIVER_H_
-#define _RECEIVER_H_
+#ifndef RECEIVER_H
+#define RECEIVER_H
 
 #include "Record.h"
 
@@ -28,4 +28,4 @@ namespace Model
     };
 }
 
-#endif /*_RECEIVER_H_*/
+#endif /*RECEIVER_H*/

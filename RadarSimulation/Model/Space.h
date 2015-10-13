@@ -5,8 +5,8 @@
 *
 */
 
-#ifndef _SPACE_H_
-#define _SPACE_H_
+#ifndef SPACE_H
+#define SPACE_H
 
 #include "Record.h"
 
@@ -27,4 +27,4 @@ namespace Model
     };
 }
 
-#endif /*_SPACE_H_*/
+#endif /*SPACE_H*/

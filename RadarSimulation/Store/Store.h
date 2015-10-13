@@ -5,8 +5,8 @@
 *
 */
 
-#ifndef _STORE_H_
-#define _STORE_H_
+#ifndef STORE_H
+#define STORE_H
 
 #include "IStore.h"
 #include <map>
@@ -44,4 +44,4 @@ namespace Store
     };
 }
 
-#endif /*_STORE_H_*/
+#endif /*STORE_H*/
