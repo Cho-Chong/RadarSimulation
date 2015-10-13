@@ -22,7 +22,7 @@ namespace Store
         Cache.clear();
     }
 
-    void Store::Add(const Model::Record &record)
+    void Store::Add(Model::Record &record)
     {
         if (Cache.find(record.GetId()) != Cache.end())
         {
