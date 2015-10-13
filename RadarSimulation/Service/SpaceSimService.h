@@ -1,7 +1,7 @@
 /*
 * File: SpaceSimService.h
 *
-* Description: Observes setting for simulation and transmit signal accordingly
+* Description: Observes setting for simulation and transmit signal accordingly. Takes care of how radar moves
 *
 */
 
@@ -10,9 +10,14 @@
 
 #include "ISimService.h"
 #include "TransmitService.h"
+#include "Space.h"
+#include "Position.h"
+#include <map>
 
 namespace Service
 {
+    typedef std::map<Model::Position, double> PosToRCSType;
+
     class SpaceSimService : public Interface::ISimService
     {
     public:
@@ -23,8 +28,19 @@ namespace Service
 
         virtual void Execute();
     private:
-        //TODO: needs to know target and enviornment shape
+        double CalcRCS(const Model::Position &position);
+        bool IsRadarCollision(const Model::Position &position);
+        void CalcRadarEnergy(const Model::Position &position);
+
+        //TODO: belongs somewhere else
+        static const int MAX_X = 50;
+        static const int MAX_Y = 50;
+
         //Each point in space maps to a value of Radar Cross Section
+        PosToRCSType PosToRCSMap;
+
+        //TODO: needs to know target and enviornment shape
+
     };
 
 }
